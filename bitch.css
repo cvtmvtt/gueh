@@ -35,8 +35,10 @@
     /*background image*/ /*(replace the link to use)*/
     --background-image: var(--wallpaper);
     --bg-opacity: 100%;
+
     /*bg dev suggestions*/
     --wallpaper: url("https://files.catbox.moe/a8sna0.jpg");
+
     /*modern background selection*/
     --modern-dark-bg: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-dark-bg.png");
     --modern-light-bg: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-light-bg.png");
@@ -79,20 +81,22 @@
     --rs-medium-width: 3.5px;
     --rs-large-width: 4.5px;
     --rs-avatar-shape: 50%;
+
     --rs-online-color: #1df594;
     --rs-idle-color: #faa61a;
     --rs-dnd-color: #f04747;
     --rs-offline-color: #636b75;
     --rs-streaming-color: #643da7;
     --rs-invisible-color: #636b75;
+
     --rs-phone-visible: block; /* change it to `none` to disable mobile icon */
     --rs-phone-color: var(--rs-online-color);
 
+
     /* For accent color to take full effect must need to change both */
-    /* chillax colours rgb */
-    --accentcolor: 251, 84, 84;
-    /* chillax colours hex */
-    --accentcolorV2: #0a0a0a;
+    /* neutral accents */
+    --accentcolor: 255, 255, 255;
+    --accentcolorV2: #ffffff;
 
 
     /* settings modal root */
@@ -101,33 +105,42 @@
     --settingsmodalwidth: 960px;
     --settingsmodalheight: 80vh;
 
+
     /* avatar only member list */
     --memberlist-border-radius: 10px; /* can be in `px`, `rem`, `em` */
+
 
     /* placeholder texts/values */
     /* input fields */
     --chillax-input-field: "Life is so much easier when you just take a moment to chill";
-    /* input fields  when the channel is locked*/
+
+    /* input fields when the channel is locked */
     --chillax-input-field-locked: "Unfortunately, you can't chill in this channel";
+
     /* typing indicator: when a single person is typing */
     --chillax-input-typing-indicator-one-person: "is smashing some buttons";
+
     /* typing indicator: when more than one person is typing */
     --chillax-input-typing-indicator-many-person: "are smashing some buttons";
 
+
     /* scroller (by default transparent) */
-    --chillax-scroller-color: transparent; /* change `transparent` to some other hex color to make it visible */
+    --chillax-scroller-color: transparent;
+
 
     /* Spotify Player Control Squid GIF Adjustments */
 
     /* Change the ulr in the `--chillax-spotify-control-squid-gif-url` css var to your liking */
     --chillax-spotify-control-squid-gif-url: url("https://raw.githubusercontent.com/Chillax-ORG/Images/refs/heads/main/Glow_Squid_BE1.gif");
+
     /* adjust the height and width accordingly */
     --chillax-spotify-control-squid-width: 25px;
     --chillax-spotify-control-squid-height: 25px;
 
     /* adjust glow color accordingly */
-    --chillax-spotify-control-squid-glow: rgba(0, 255, 255, 0.4); /* set to `none` to disable it */
+    --chillax-spotify-control-squid-glow: rgba(0, 255, 255, 0.4);
 }
+
 
 /*discord transparency*//*roots*/ /*theme dark*/
 .theme-dark {
@@ -149,6 +162,7 @@
     --deprecated-panel-background: transparent;
 }
 
+
 /*discord transparency*//*roots*/ /*theme light*/
 .theme-light {
     --background-message-hover: rgba(255, 255, 255, 0.055);
@@ -167,9 +181,21 @@
     --background-accent: rgb(27, 27, 27);
     --activity-card-background: transparent;
     --deprecated-panel-background: transparent;
+
+    /* black accent for light mode */
+    --accentcolor: 0, 0, 0;
+    --accentcolorV2: #000000;
 }
 
-/*!*friends grid banner colour*!*/
+
+/* dark mode stays white */
+.theme-dark {
+    --accentcolor: 255, 255, 255;
+    --accentcolorV2: #ffffff;
+}
+
+
+/*friends grid banner colour*/
 /*.theme-dark {*/
 /*    --FG-cards-banner-background: transparent !important;*/
 /*}*/
@@ -182,9 +208,10 @@
 /*Permissions*/
 /*
 - You do not have the rights to use our theme name Chillax™ on other projects
-- You do not have the rights to remove our theme watermark in the theme
+- You do not have the rights to remove the theme watermark in the theme
 - You do not have the rights to change this theme author/dev/maintainer name to anyone
 */
+
 
 /*credits*/
 /*
@@ -214,3 +241,399 @@
 =================================================================
 */
 /*I really want to give a special shoutout to all of you for supporting me in this theme, thank you all.*/
+
+
+/* ============================================================
+   CUSTOM OVERRIDES
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   CHILLAX BRANDING -> DISCORD
+   ------------------------------------------------------------ */
+
+/*
+   Chillax currently uses the sidebar content pseudo-element
+   for its decorative branding. Replace its text without touching
+   the rest of the sidebar.
+*/
+.sidebar__5e434 .content__99f8c::after {
+    content: "d i s c o r d" !important;
+}
+
+
+/* ------------------------------------------------------------
+   REMOVE THE RED FEEL FROM CHILLAX ACCENTS
+   ------------------------------------------------------------ */
+
+/*
+   Dark mode = white accents.
+   Light mode = black accents.
+*/
+html.theme-dark,
+.theme-dark {
+    --accentcolor: 255, 255, 255 !important;
+    --accentcolorV2: #ffffff !important;
+
+    --FG-cards-banner-background: rgba(255, 255, 255, 0.08) !important;
+    --FG-cards-border-color-normal: rgba(255, 255, 255, 0.10) !important;
+    --FG-cards-border-color-hover: rgba(255, 255, 255, 0.24) !important;
+}
+
+html.theme-light,
+.theme-light {
+    --accentcolor: 0, 0, 0 !important;
+    --accentcolorV2: #000000 !important;
+
+    --FG-cards-banner-background: rgba(0, 0, 0, 0.06) !important;
+    --FG-cards-border-color-normal: rgba(0, 0, 0, 0.10) !important;
+    --FG-cards-border-color-hover: rgba(0, 0, 0, 0.22) !important;
+}
+
+
+/* ------------------------------------------------------------
+   FRIENDS -> ALL
+   Cleaner cards, spacing, search and hover states
+   ------------------------------------------------------------ */
+
+:root {
+    --FG-row: repeat(3, minmax(0, 1fr));
+
+    --FG-search-radius: 12px;
+
+    --FG-cards-radius: 14px;
+    --FG-cards-height: 165px;
+    --FG-cards-margin-bottom: 12px;
+    --FG-cards-banner-height: 0px;
+    --FG-cards-border-width: 1px;
+
+    --FG-avatar-margin-top: 32px;
+    --FG-avatar-margin-left: 17px;
+
+    --FG-text-margin-left: 18px;
+
+    --FG-cards-banner-opacity-normal: 0;
+    --FG-cards-banner-opacity-hover: 0.12;
+    --FG-cards-banner-opacity-active: 0.16;
+
+    --FG-cards-avatar-opacity-normal: 1;
+    --FG-cards-avatar-opacity-hover: 1;
+    --FG-cards-avatar-opacity-active: 1;
+
+    --FG-cards-username-opacity-normal: 1;
+    --FG-cards-username-opacity-hover: 1;
+    --FG-cards-username-opacity-active: 1;
+
+    --FG-cards-discriminator-opacity-normal: 0.6;
+    --FG-cards-discriminator-opacity-hover: 0.85;
+    --FG-cards-discriminator-opacity-active: 1;
+
+    --FG-cards-status-opacity-normal: 0.65;
+    --FG-cards-status-opacity-hover: 1;
+    --FG-cards-status-opacity-active: 1;
+
+    --FG-cards-button-opacity-normal: 0;
+    --FG-cards-button-opacity-hover: 1;
+    --FG-cards-button-opacity-active: 1;
+
+    --FG-transition: all 0.22s ease;
+}
+
+
+/* All page container */
+.peopleColumn__133bf#all-tab {
+    padding: 34px 24px 24px !important;
+}
+
+
+/* Search bar */
+.peopleColumn__133bf#all-tab .searchBar__5ec2f {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 12px !important;
+    padding: 6px 10px !important;
+    margin: 0 0 18px 0 !important;
+    box-sizing: border-box;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.theme-light .peopleColumn__133bf#all-tab .searchBar__5ec2f {
+    background: rgba(0, 0, 0, 0.045) !important;
+    border-color: rgba(0, 0, 0, 0.10);
+}
+
+.peopleColumn__133bf#all-tab .searchBar__5ec2f:focus-within {
+    border-color: var(--accentcolorV2);
+    box-shadow: 0 0 0 2px rgba(var(--accentcolor), 0.10);
+}
+
+
+/* Main All friends grid */
+.peopleColumn__133bf#all-tab .peopleList__5ec2f > div {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(220px, 1fr)) !important;
+    gap: 14px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* Section headings */
+.peopleColumn__133bf#all-tab .peopleList__5ec2f > div > .sectionTitle__5ec2f {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin: 4px 0 2px !important;
+    padding: 4px 2px !important;
+}
+
+.peopleColumn__133bf#all-tab .peopleList__5ec2f > div > .sectionTitle__5ec2f h3,
+.peopleColumn__133bf#all-tab .peopleList__5ec2f > div > .sectionTitle__5ec2f {
+    color: var(--header-primary) !important;
+}
+
+
+/* Hide old dividers */
+.peopleColumn__133bf#all-tab .peopleList__5ec2f > div > .divider_cc6179 {
+    display: none !important;
+}
+
+
+/* Friend cards */
+.peopleColumn__133bf#all-tab .peopleListItem_cc6179 {
+    position: relative;
+    min-height: 165px !important;
+    height: 165px !important;
+
+    background: rgba(0, 0, 0, 0.26) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 14px !important;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.16);
+
+    transform: translateY(0);
+    transition:
+        background 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease,
+        transform 0.22s ease;
+}
+
+.theme-light .peopleColumn__133bf#all-tab .peopleListItem_cc6179 {
+    background: rgba(255, 255, 255, 0.62) !important;
+    border-color: rgba(0, 0, 0, 0.09) !important;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Card hover */
+.peopleColumn__133bf#all-tab .peopleListItem_cc6179:hover {
+    background: rgba(255, 255, 255, 0.045) !important;
+    border-color: rgba(255, 255, 255, 0.20) !important;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.22);
+
+    transform: translateY(-2px);
+}
+
+.theme-light .peopleColumn__133bf#all-tab .peopleListItem_cc6179:hover {
+    background: rgba(255, 255, 255, 0.78) !important;
+    border-color: rgba(0, 0, 0, 0.17) !important;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.11);
+}
+
+
+/* Selected card */
+.peopleColumn__133bf#all-tab .peopleListItem_cc6179.active_cc6179 {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border-color: var(--accentcolorV2) !important;
+    box-shadow:
+        0 0 0 1px rgba(var(--accentcolor), 0.14),
+        0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Banner */
+.peopleColumn__133bf#all-tab .userInfo__0a06e::before {
+    background-image: none !important;
+    background-color: var(--FG-cards-banner-background) !important;
+    opacity: 0 !important;
+}
+
+.peopleColumn__133bf#all-tab .peopleListItem_cc6179:hover .userInfo__0a06e::before {
+    opacity: 1 !important;
+}
+
+
+/* Avatar */
+.peopleColumn__133bf#all-tab .avatar__0a06e.wrapper-1VLyxH {
+    transform: scale(1.55) !important;
+    margin-left: 26px !important;
+    margin-top: 26px !important;
+}
+
+
+/* Avatar background */
+.peopleColumn__133bf#all-tab .avatar__0a06e::before {
+    background: rgba(255, 255, 255, 0.055) !important;
+    border-radius: 50% !important;
+}
+
+.theme-light .peopleColumn__133bf#all-tab .avatar__0a06e::before {
+    background: rgba(0, 0, 0, 0.055) !important;
+}
+
+
+/* User information */
+.peopleColumn__133bf#all-tab .text__0a06e {
+    left: 0 !important;
+    bottom: 16px !important;
+    margin-left: 18px !important;
+
+    width: calc(100% - 36px) !important;
+
+    font-size: 17px !important;
+    line-height: 21px !important;
+}
+
+
+/* Username */
+.peopleColumn__133bf#all-tab .username__0a06e {
+    font-size: 17px !important;
+    font-weight: 700 !important;
+}
+
+
+/* Discriminator */
+.peopleColumn__133bf#all-tab .discriminator__0a06e {
+    font-size: 15px !important;
+    line-height: 18px !important;
+}
+
+
+/* Status/subtext */
+.peopleColumn__133bf#all-tab .subtext__0a06e {
+    margin-top: 3px;
+    font-size: 12px !important;
+}
+
+
+/* Friend action buttons */
+.peopleColumn__133bf#all-tab .actions_fc004c {
+    position: absolute !important;
+
+    top: 10px !important;
+    right: 10px !important;
+    bottom: auto !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+
+    transform: scale(0.82) !important;
+    transform-origin: top right;
+
+    z-index: 5;
+}
+
+
+/* Individual action button */
+.peopleColumn__133bf#all-tab .actionButton_f8fa06 {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+
+    margin-left: 5px !important;
+
+    background: rgba(0, 0, 0, 0.28) !important;
+    color: #ffffff !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 9px !important;
+
+    backdrop-filter: blur(6px);
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.theme-light .peopleColumn__133bf#all-tab .actionButton_f8fa06 {
+    background: rgba(255, 255, 255, 0.70) !important;
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.10);
+}
+
+
+/* Action hover */
+.peopleColumn__133bf#all-tab .actionButton_f8fa06:hover {
+    background: var(--accentcolorV2) !important;
+    color: var(--text-normal) !important;
+
+    border-color: var(--accentcolorV2);
+
+    transform: translateY(-1px);
+}
+
+
+/* Better text contrast on dark cards */
+.theme-dark .peopleColumn__133bf#all-tab .username__0a06e,
+.theme-dark .peopleColumn__133bf#all-tab .discriminator__0a06e,
+.theme-dark .peopleColumn__133bf#all-tab .subtext__0a06e {
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Remove old Friends Grid spacing weirdness */
+.peopleColumn__133bf#all-tab .userInfo__0a06e {
+    margin-bottom: 0 !important;
+}
+
+
+/* ------------------------------------------------------------
+   RESPONSIVE FRIENDS -> ALL
+   ------------------------------------------------------------ */
+
+@media screen and (max-width: 1500px) {
+    .peopleColumn__133bf#all-tab .peopleList__5ec2f > div {
+        grid-template-columns: repeat(2, minmax(220px, 1fr)) !important;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .peopleColumn__133bf#all-tab .peopleList__5ec2f > div {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .peopleColumn__133bf#all-tab {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    .peopleColumn__133bf#all-tab .peopleList__5ec2f > div {
+        gap: 10px !important;
+    }
+
+    .peopleColumn__133bf#all-tab .peopleListItem_cc6179 {
+        min-height: 150px !important;
+        height: 150px !important;
+    }
+}
